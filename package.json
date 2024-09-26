@@ -9,16 +9,18 @@
   },
   "private": true,
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.0",
     "@types/axios": "^0.14.0",
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/jsonfile": "^6.1.4",
+    "@types/uuid": "^10.0.0",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
-    "jsonfile": "^6.1.0"
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonfile": "^6.1.0",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
