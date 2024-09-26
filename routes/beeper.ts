@@ -5,10 +5,11 @@ import { newBeeper,  getAllBeepers, getBeeperById, updateStatus, deleteBeeper, g
 const router: Router = express.Router();
 
 
-router.route('/').post(newBeeper);
-router.route('/').get(getAllBeepers);
-router.route('/').get(getBeeperById);
-router.route('/').put(updateStatus);
+router.route('/')
+    .post(newBeeper)
+    .get(getAllBeepers);
+router.route('/:id').get(getBeeperById);
+router.route('/:id/status').put(updateStatus);
 router.route('/').delete(deleteBeeper);
 router.route('/').get(getBeeperByStatus);
 
