@@ -9,9 +9,9 @@ export interface Beeper {
 }
 
 export enum Status {
-    manufactured,
-    assembled,
-    shipped,
-    deployed,
-    detonated,
+    manufactured = 0,
+    assembled = 1,
+    shipped = 2,
+    deployed = 3,
+    detonated = 4,
 }

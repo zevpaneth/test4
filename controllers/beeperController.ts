@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Beeper } from "../models/beeper";
-import { createBeeper, bringAllBeepers, bringBeeperById } from "../services/beeperService.js";
+import { createBeeper, bringAllBeepers, bringBeeperById, statusUpdateById } from "../services/beeperService.js";
 import beeper from "../routes/beeper";
 
 
@@ -44,6 +44,11 @@ export const getBeeperById = async (req: Request, res: Response) => {
     const id = req.params.id;
 
     try {
+        if (!id){
+            res.status(400).json({
+                message: "please enter a valid id",
+            })
+        }
         const beeper: Beeper = await bringBeeperById(id);
         res.status(200).json(beeper)
     }
@@ -60,6 +65,22 @@ export const getBeeperById = async (req: Request, res: Response) => {
 
 }
 export const updateStatus = async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id;
+        if (!id) {
+            res.status(400).json({
+                message: "please enter a valid id",
+            })
+        }
+        const beeper = await statusUpdateById(id);
+        res.status(202).json({beeper})
+    }
+    catch (error:any) {
+        res.status(400).json({
+            message: error.message,
+        })
+    }
+
 
 }
 export const deleteBeeper = async (req: Request, res: Response) => {

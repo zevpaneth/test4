@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 app.use(express.json()); // Body parser
-app.use('/api/beepers', beeperRoutes); // Auth Router
+app.use('/api/beepers', beeperRoutes); // beeper Router
 app.listen(PORT, () => {
     console.log(`server is on port ${PORT}`);
 }); // Listening for requests
