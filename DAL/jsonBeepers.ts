@@ -1,7 +1,10 @@
 import jsonfile from 'jsonfile';
 import { Beeper } from '../models/beeper.js';
+import dotenv from 'dotenv';
 
-const DB_FILE_PATH = process.env.DB_FILE_PATH || '';
+dotenv.config();
+
+const DB_FILE_PATH = process.env.DB_FILE_PATH || "";
 
 
 export const writeBeeperToJsonFile = async (beeper: Beeper): Promise<void> => {
