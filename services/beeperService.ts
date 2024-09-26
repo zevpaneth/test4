@@ -39,20 +39,23 @@ export const statusUpdateById = async (id: string): Promise<Beeper> => {
     let num: number = 0;
 
     switch (beeper.status?.toString()) {
-        case Status.manufactured.toString():{
+        case 'manufactured':{
             beeper.status = Status[Status.assembled];
             console.log(num + 1)
             break;
         }
-        case Status.assembled.toString():{
+        case 'assembled':{
             beeper.status = Status[Status.shipped];
             console.log(num +1)
             break;
         }
-        case Status.shipped.toString():{
+        case 'shipped':{
             beeper.status = Status[Status.deployed];
             // timing()
             break;
+        }
+        default:{
+            console.log(Status.manufactured.toString());
         }
     }
 
